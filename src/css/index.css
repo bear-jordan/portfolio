@@ -1,0 +1,414 @@
+/* ////////
+   Reset 
+//////// */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* /////////
+   Global 
+///////// */
+:root {
+    --s00: 0.2rem;
+    --s0: 0.5rem;
+    --s1: 2rem;
+    --s2: 3rem;
+    --s3: 4rem;
+
+    --w00: 98%;
+    --w0: 95%;
+    --w1: 80%;
+    --w2: 60%;
+    --w3: 40%;
+
+    --color-light: #FFF;
+    --color-dark: #000;
+}
+
+/* //////////////
+   Composition 
+////////////// */
+.box {
+    color: var(--color-dark);
+    background-color: var(--color-light);
+}
+  
+.box * {
+    color: inherit;
+}
+
+.box.invert {
+    color: var(--color-light);
+    background-color: var(--color-dark);
+}
+
+.box.invert .button {
+    border-color: var(--color-light);
+}
+
+.frame {
+    --n: 16;
+    --d: 9;
+    aspect-ratio: var(--n) / var(--d);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+.frame > img,
+.frame > video {
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
+}
+
+.with-sidebar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--s1);
+}
+  
+.with-sidebar > :first-child {
+    flex-grow: 1;
+}
+  
+.with-sidebar > :last-child {
+    flex-basis: 0;
+    flex-grow: 999;
+    min-inline-size: 30%;
+}
+
+.switcher {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--s1);
+}
+  
+.switcher > * {
+    flex-grow: 1;
+    flex-basis: calc(( 30rem - 100%) * 999);
+}
+  
+.switcher > :nth-last-child(n+ 3),
+.switcher > :nth-last-child(n+ 3) ~ * {
+    flex-basis: 100%;
+}
+
+.stack {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+  
+.stack > * {
+    margin-block: 0;
+} 
+  
+.stack > * + * {
+    margin-block-start: var(--space, 0rem);
+}
+
+.stack-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+  
+.stack-row > * {
+    margin-inline: var(--s0, 0rem);
+} 
+  
+.grid {
+    display: grid;
+    margin: -1px;
+}
+  
+@supports (width: min(250px, 100%)) {
+    .grid {
+        grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+    }
+}
+
+.cover {
+    display: flex;
+    flex-direction: column;
+    min-block-size: 100vh;
+    padding: 1rem;
+}
+  
+.cover > * {
+    margin-block: 1rem;
+}
+  
+.cover > :first-child:not(div) {
+    margin-block-start: 0;
+}
+  
+.cover > :last-child:not(div) {
+    margin-block-end: 0;
+}
+  
+.cover > div {
+    margin-block: auto;
+}
+
+/* ////////////
+   Utilities 
+//////////// */
+.absolute {
+    position: absolute;
+}
+
+.text-align-end {
+    text-align: end;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.text-align-center {
+    text-align: center;
+}
+
+.text-align-start {
+    text-align: start;
+}
+
+.active {
+    display: block;
+}
+
+.border {
+    border: 1px solid var(--color-dark);
+}
+
+.block {
+    display: block;
+}
+
+.header-button {
+    text-align: center;
+    padding: .25rem;
+    border-radius: var(--s00);
+    border: 1px var(--color-light) solid;
+}
+
+.header-button-border {
+    border: 1px var(--color-dark) solid;
+}
+
+.header-button:hover {
+    border: 1px var(--color-dark) solid;
+}
+
+.center {
+    box-sizing: content-box;
+    margin-inline: auto;
+}
+
+.flex {
+    display: flex;
+}
+
+.limit-width-00 {
+    max-width: var(--w00);
+}
+
+.limit-width-0 {
+    max-width: var(--w0);
+}
+
+.limit-width-1 {
+    max-width: var(--w1);
+}
+
+.limit-width-2 {
+    max-width: var(--w2);
+}
+
+.limit-width-3 {
+    max-width: var(--w3);
+}
+
+.justify-content-around {
+    justify-content: space-around;
+}
+
+.justify-content-between {
+    justify-content: space-between;
+}
+
+.justify-content-start {
+    justify-content: start;
+}
+
+.justify-content-end {
+    justify-content: end;
+}
+
+.padding-00 {
+    padding: var(--s00);
+}
+
+.padding-0 {
+    padding: var(--s0);
+}
+
+.padding-1 {
+    padding: var(--s1);
+}
+
+.hidden {
+    display: none;
+}
+
+.relative {
+    position: relative;
+}
+
+.rounding-00 {
+    border-radius: var(--s00);
+}
+
+.no-margin {
+    margin: 0;
+}
+
+.top-left {
+    top: 10%;
+    left: 5%;
+}
+
+.bottom-center {
+    bottom: var(--s3);
+}
+
+.button {
+    width: 8.25rem;
+    min-height: 2.5rem;
+    border: 1px solid var(--color-dark);
+    background-color: var(--color-light);
+    border-radius: var(--s00);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button a {
+    text-decoration: none;
+}
+
+.button a:hover {
+    font-weight: 900;
+}
+
+.text-stroke {
+    -webkit-text-stroke: var(--color-light) 1px;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.no-decoration {
+    text-decoration: none;
+}
+
+.side-item {
+    flex-grow: 1;
+    flex-basis: 0;
+ } 
+
+/* ////////
+   Block 
+//////// */
+
+body {
+    background-color: var(--color-light);
+    font-family: 'New Order', sans-serif;
+}
+
+header .stack {
+    --space: var(--s0)
+}
+
+header .stack > * + * {
+    --space: var(--s00)
+}
+
+.frame:first-child {
+    margin-top: 50px;
+}
+
+p {
+    color: var(--color-dark);
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.footer-link {
+    color: var(--color-light);
+}
+
+.bio .stack {
+    --space: var(--s0)
+}
+
+/* /////////////
+   Exceptions 
+///////////// */
+
