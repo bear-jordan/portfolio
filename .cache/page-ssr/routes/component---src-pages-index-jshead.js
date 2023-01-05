@@ -2191,7 +2191,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Project_Project__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Project/Project */ "./src/components/Project/Project.jsx");
 
 
-function Projects() {
+function Projects({
+  data
+}) {
+  console.log(data);
   function genKey() {
     return Math.floor(Math.random() * 100000);
   }
@@ -2276,8 +2279,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-function Home() {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_layouts_BaseLayout__WEBPACK_IMPORTED_MODULE_1__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Projects_Projects__WEBPACK_IMPORTED_MODULE_2__["default"], null)));
+function Home({
+  data
+}) {
+  console.log(data);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_layouts_BaseLayout__WEBPACK_IMPORTED_MODULE_1__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Projects_Projects__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    data: data.allMarkdownRemark.nodes
+  })));
 }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Home);
 

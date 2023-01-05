@@ -2009,7 +2009,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 
-function Bio() {
+
+function Bio({
+  data
+}) {
+  // console.log(data)
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "box border cover bio"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
@@ -2025,6 +2029,7 @@ function Bio() {
     className: "stack border padding-0"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", null, "opportunities"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "I am in the market for part-time and full-time opportunities in the data space. I offer expertise in modernizing data collection and management, designing static and interactive visualizations, and developing statistical notebooks for routine analysis."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "If you are an environmental NGO, I am always happy to volunteer my time producing dashboards, data visualizations, and data management solutions. Please reach out. I'd love to hear from you!"))));
 }
+const query = "1132953258";
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Bio);
 
 /***/ }),
@@ -2213,7 +2218,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-function About() {
+function About({
+  data
+}) {
+  console.log(data);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_layouts_BaseLayout__WEBPACK_IMPORTED_MODULE_1__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Bio_Bio__WEBPACK_IMPORTED_MODULE_2__["default"], null)));
 }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (About);

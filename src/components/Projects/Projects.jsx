@@ -1,7 +1,31 @@
 import React from "react"
 import Project from "../Project/Project"
+import { getImage} from "gatsby-plugin-image"
 
-function Projects() {
+function Projects({ data }) {
+    console.log(data)
+
+    const formattedData = data.map(d => {
+        return (
+            {
+                "collaborators": d.node.frontmatter.collaborators, 
+                "date_created": d.node.frontmatter.date_created, 
+                "duration": d.node.frontmatter.duration, 
+                "title": d.node.frontmatter.title, 
+                "stack": d.node.frontmatter.stack, 
+                "slug": d.node.frontmatter.slug, 
+                "scheme": d.node.frontmatter.scheme, 
+                "project_type": d.node.frontmatter.project_type, 
+                "my_role": d.node.frontmatter.my_role, 
+                "image": getImage(d.node.frontmatter.image), 
+                "html": d.node.html,
+                "id": d.node.id
+            }
+        )
+    })
+
+    console.log(formattedData)
+
     function genKey() {
         return Math.floor(Math.random()*100000)
     }
@@ -23,12 +47,12 @@ function Projects() {
         },
     ]
 
-    const projectList = projects.map((d, i) => {
-            return <Project key={genKey()}
+    const projectList = formattedData.map((d, i) => {
+            return <Project key={d.id}
                 index={i}
                 image={d.image}
                 title={d.title}
-                link={d.link}
+                slug={d.slug}
                 scheme={d.scheme}/>
     })
     
@@ -38,5 +62,5 @@ function Projects() {
         </div>
     )
 }
- 
+
 export default Projects

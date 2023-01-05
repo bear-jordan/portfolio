@@ -1,6 +1,9 @@
+import { graphql } from "gatsby"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import React from "react"
 
-function Bio() {
+function Bio({ data }) {
+
     return (
         <div className="box border cover bio">
             <div className="stack">
@@ -21,5 +24,18 @@ function Bio() {
         </div>
     )
 }
+
+export const query = graphql`
+    query test {
+        file(relativePath: {eq: "bear-dino.jpg"}) {
+        id
+        childImageSharp {
+            gatsbyImageData(blurredOptions: {width: 10}, placeholder: BLURRED)
+        }
+        dir
+        relativePath
+        }
+    }
+`
 
 export default Bio

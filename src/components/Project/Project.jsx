@@ -1,11 +1,12 @@
 import React from "react"
 import { Link } from "gatsby"
+import { GatsbyImage} from "gatsby-plugin-image"
 
-function Project({index, image, title, link, scheme}) {
+function Project({index, image, title, slug, scheme}) {
     
     return (
         <div className={"box border frame relative"+(scheme === "light" ? " invert" : "")}>
-            <img src={image} alt="example" />
+            <GatsbyImage image={image} alt="example" />
             <div className="absolute top-left">
                 <h2 className="">0{index}</h2>
             </div>
@@ -13,7 +14,7 @@ function Project({index, image, title, link, scheme}) {
                 <div className="">
                     <h3 className="">{title}</h3>
                     <div className={"button box center"+(scheme === "light" ? " invert" : "")}>
-                        <a href="#">view project</a>
+                        <Link to={slug}>view project</Link>
                     </div>
                 </div>
             </div>
