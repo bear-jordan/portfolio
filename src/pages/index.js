@@ -23,7 +23,7 @@ query ProjectsQuery {
           frontmatter {
             image {
               childImageSharp {
-                gatsbyImageData(blurredOptions: {width: 1080}, placeholder: BLURRED)
+                gatsbyImageData(blurredOptions: {width: 1080}, placeholder: BLURRED, transformOptions: {fit: FILL})
                 id
               }
             }

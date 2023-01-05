@@ -1,4 +1,3 @@
-import { graphql } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import React from "react"
 
@@ -8,7 +7,7 @@ function Bio({ data }) {
         <div className="box border cover bio">
             <div className="stack">
                 <div className="border box frame center">
-                    <img src="src/assets/img/bear-dino.jpg" alt="" />
+                    <GatsbyImage image={getImage(data.imageSharp)} alt="example" />
                 </div> 
                 <div className="stack border padding-0">
                     <h2>background</h2>
@@ -24,18 +23,5 @@ function Bio({ data }) {
         </div>
     )
 }
-
-export const query = graphql`
-    query test {
-        file(relativePath: {eq: "bear-dino.jpg"}) {
-        id
-        childImageSharp {
-            gatsbyImageData(blurredOptions: {width: 10}, placeholder: BLURRED)
-        }
-        dir
-        relativePath
-        }
-    }
-`
 
 export default Bio
