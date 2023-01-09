@@ -384,10 +384,6 @@ header .stack > * + * {
     --space: var(--s00)
 }
 
-.frame:first-child {
-    margin-top: 50px;
-}
-
 p {
     color: var(--color-dark);
 }
@@ -398,6 +394,7 @@ header {
     top: 0;
     left: 0;
     z-index: 1;
+    margin-bottom: 50px;
 }
 
 .footer-link {
@@ -406,6 +403,14 @@ header {
 
 .bio .stack {
     --space: var(--s0)
+}
+
+.project .stack {
+    --space: var(--s0)
+}
+
+.content {
+    margin-top: 50px;
 }
 
 /* /////////////
