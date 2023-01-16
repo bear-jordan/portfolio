@@ -306,6 +306,10 @@ select {
     padding: var(--s1);
 }
 
+.pointer {
+    cursor: pointer;
+}
+
 .hidden {
     display: none;
 }

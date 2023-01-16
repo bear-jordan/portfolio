@@ -13,21 +13,22 @@ function Menu({ showMenu }) {
                         slug
                         project_type
                     }
+                    id
                 }
             }
         }
         `).allMarkdownRemark.nodes
 
         const statisticsList = data.filter(d => d.frontmatter.project_type==="statistics").map((s) => {
-            return <p><Link className="no-decoration" to={"/"+s.frontmatter.slug}>{s.frontmatter.title}</Link></p>
+            return <p key={s.id}><Link className="no-decoration pointer" to={"/"+s.frontmatter.slug}>{s.frontmatter.title}</Link></p>
         })
 
         const tableauList = data.filter(d => d.frontmatter.project_type==="tableau").map((s) => {
-            return <p><Link className="no-decoration" to={"/"+s.frontmatter.slug}>{s.frontmatter.title}</Link></p>
+            return <p key={s.id}><Link className="no-decoration pointer" to={"/"+s.frontmatter.slug}>{s.frontmatter.title}</Link></p>
         })
 
         const d3List = data.filter(d => d.frontmatter.project_type==="d3+react").map((s) => {
-            return <p><Link className="no-decoration" to={"/"+s.frontmatter.slug}>{s.frontmatter.title}</Link></p>
+            return <p key={s.id}><Link className="no-decoration pointer" to={"/"+s.frontmatter.slug}>{s.frontmatter.title}</Link></p>
         })
 
     return (

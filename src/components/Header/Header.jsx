@@ -16,7 +16,7 @@ function Header() {
         <header className="box border">
             <div className="flex justify-content-between align-items-center center limit-width-00 fixed">
                 <div className="flex justify-content-start side-item">
-                    <div className={"header-button "+(showMenu ? " header-button-border" : "")} onClick={handleClick}>
+                    <div className={"pointer header-button "+(showMenu ? " header-button-border" : "")} onClick={handleClick}>
                         projects
                     </div>
                 </div>
