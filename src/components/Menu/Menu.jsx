@@ -1,7 +1,35 @@
 import * as React from "react"
-import { ReactDOM } from "react";
+import { useEffect } from "react";
+import { useStaticQuery, graphql, Link } from "gatsby"
 
-function Menu({showMenu}) {
+function Menu({ showMenu }) {
+
+    const data = useStaticQuery(graphql`
+        query MenuQuery {
+            allMarkdownRemark {
+                nodes {
+                    frontmatter {
+                        title
+                        slug
+                        project_type
+                    }
+                }
+            }
+        }
+        `).allMarkdownRemark.nodes
+
+        const statisticsList = data.filter(d => d.frontmatter.project_type==="statistics").map((s) => {
+            return <p><Link className="no-decoration" to={"/"+s.frontmatter.slug}>{s.frontmatter.title}</Link></p>
+        })
+
+        const tableauList = data.filter(d => d.frontmatter.project_type==="tableau").map((s) => {
+            return <p><Link className="no-decoration" to={"/"+s.frontmatter.slug}>{s.frontmatter.title}</Link></p>
+        })
+
+        const d3List = data.filter(d => d.frontmatter.project_type==="d3+react").map((s) => {
+            return <p><Link className="no-decoration" to={"/"+s.frontmatter.slug}>{s.frontmatter.title}</Link></p>
+        })
+
     return (
         <div id="header-menu" className={"grid"+(showMenu ? "" : " hidden")}>
             <div className="border padding-0">
@@ -14,7 +42,7 @@ function Menu({showMenu}) {
             </div>
             <div className="border padding-0">
                 <h4>statistics</h4>
-                <p>coming soon</p>
+                {statisticsList}
             </div>
             <div className="border padding-0">
                 <h4>publications</h4>

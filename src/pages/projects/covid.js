@@ -7,9 +7,9 @@ import "../../css/index.css"
 function covid({ data }) {
     const rawHtml = data.markdownRemark.html
 
-    let re1 = /(?=\<h1\>)/g
+    let re1 = /(?=<h1>)/g
     let cleanHtml = rawHtml.replace(re1, `<div class="stack border padding-0">`)
-    let re2 = /(?=\<h2\>)/g
+    let re2 = /(?=<h2>)/g
     
     cleanHtml = cleanHtml.replace(re2, `</div><div class="stack border padding-0">`)
     cleanHtml = cleanHtml+`</div>`
