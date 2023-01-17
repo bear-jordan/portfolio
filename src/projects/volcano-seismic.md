@@ -3,7 +3,7 @@ title: volcanic seismicity
 slug: projects/volcanic-seismicty
 image: ../assets/img/ds-jaime-dantas--mXlubcOD58-unsplash.jpg
 scheme: light
-date created: 04/2022
+date created: 2022.004
 project type: statistics
 collaborators: example
 duration: 4 months

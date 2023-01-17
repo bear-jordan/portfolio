@@ -17,7 +17,7 @@ function Home({ data }) {
 
 export const query = graphql`
 query ProjectsQuery {
-    allMarkdownRemark {
+    allMarkdownRemark(sort: {frontmatter: {date_created: ASC}}) {
       edges {
         node {
           frontmatter {

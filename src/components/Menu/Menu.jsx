@@ -1,5 +1,4 @@
 import * as React from "react"
-import { useEffect } from "react";
 import { useStaticQuery, graphql, Link } from "gatsby"
 
 function Menu({ showMenu }) {
@@ -20,15 +19,15 @@ function Menu({ showMenu }) {
         `).allMarkdownRemark.nodes
 
         const statisticsList = data.filter(d => d.frontmatter.project_type==="statistics").map((s) => {
-            return <p key={s.id}><Link className="no-decoration pointer" to={"/"+s.frontmatter.slug}>{s.frontmatter.title}</Link></p>
+            return <p key={s.id}><Link className="no-decoration pointer underline-on-hover" to={"/"+s.frontmatter.slug}>{s.frontmatter.title}</Link></p>
         })
 
         const tableauList = data.filter(d => d.frontmatter.project_type==="tableau").map((s) => {
-            return <p key={s.id}><Link className="no-decoration pointer" to={"/"+s.frontmatter.slug}>{s.frontmatter.title}</Link></p>
+            return <p key={s.id}><Link className="no-decoration pointer underline-on-hover" to={"/"+s.frontmatter.slug}>{s.frontmatter.title}</Link></p>
         })
 
         const d3List = data.filter(d => d.frontmatter.project_type==="d3+react").map((s) => {
-            return <p key={s.id}><Link className="no-decoration pointer" to={"/"+s.frontmatter.slug}>{s.frontmatter.title}</Link></p>
+            return <p key={s.id}><Link className="no-decoration pointer underline-on-hover" to={"/"+s.frontmatter.slug}>{s.frontmatter.title}</Link></p>
         })
 
     return (

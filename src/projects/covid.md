@@ -3,7 +3,7 @@ title: covid traffic impacts
 slug: projects/covid
 image: ../assets/img/ds-matt-burke-jCVIqVVE7yE-unsplash.jpg
 scheme: light
-date created: 12/2022
+date created: 2022.012
 project type: statistics
 collaborators: alex dreo
 duration: 2 months
