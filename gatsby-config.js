@@ -27,15 +27,20 @@ module.exports = {
             }
         },
         {
-            resolve: `gatsby-source-filesystem`,
-            options: {
-                name: `docs`,
-                path: `${__dirname}/src/assets/docs`,
-            }
+          resolve: `gatsby-transformer-remark`,
+          options: {
+            plugins: [
+              {
+                resolve: `gatsby-remark-images`,
+                options: {
+                  maxWidth: 8000,
+                },
+              },
+            ],
+          },
         },
-        "gatsby-transformer-remark",
+        `gatsby-plugin-sharp`,
         "gatsby-plugin-image",
-        "gatsby-plugin-sharp",
         "gatsby-transformer-sharp",
     ],
 }

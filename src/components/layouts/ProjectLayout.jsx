@@ -1,9 +1,12 @@
 import React from "react";
 import BaseLayout from "./BaseLayout";
 import { GatsbyImage } from "gatsby-plugin-image";
+import { Link } from "gatsby"
 
-function ProjectLayout({ title, image, alt, cleanHtml }) {
-    
+function ProjectLayout({ title, image, alt, cleanHtml, download }) {
+    console.log(download)
+
+    const downloadLink = <div><Link to={"/"+download} className="no-decoration">download report</Link></div>
     return (
         <>
             <BaseLayout>
@@ -18,6 +21,7 @@ function ProjectLayout({ title, image, alt, cleanHtml }) {
                             </div> 
                             <div className="stack project" dangerouslySetInnerHTML={{__html: cleanHtml}} />
                         </div>
+                    {downloadLink}
                     </div>
                 </div>
             </BaseLayout>

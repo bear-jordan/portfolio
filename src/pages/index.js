@@ -37,6 +37,7 @@ query ProjectsQuery {
             scheme
             project_type
             my_role
+            alt
           }
           html
           id

@@ -12,7 +12,8 @@ function Projects({ data }) {
                 "slug": d.node.frontmatter.slug, 
                 "scheme": d.node.frontmatter.scheme, 
                 "image": getImage(d.node.frontmatter.image), 
-                "id": d.node.id
+                "id": d.node.id,
+                "alt": d.node.frontmatter.alt
             }
         )
     })
@@ -23,7 +24,8 @@ function Projects({ data }) {
                 image={d.image}
                 title={d.title}
                 slug={d.slug}
-                scheme={d.scheme}/>
+                scheme={d.scheme}
+                alt={d.alt} />
     })
     
     return (
