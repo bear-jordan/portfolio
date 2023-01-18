@@ -306,6 +306,14 @@ select {
     padding: var(--s1);
 }
 
+.padding-2 {
+    padding: var(--s2);
+}
+
+.padding-3 {
+    padding: var(--s3);
+}
+
 .pointer {
     cursor: pointer;
 }
@@ -373,6 +381,11 @@ select {
 
 .underline-on-hover:hover{
     text-decoration: underline;
+}
+
+.display-text {
+    font-size: var(--s2);
+    text-transform: uppercase;
 }
 
 /* ////////

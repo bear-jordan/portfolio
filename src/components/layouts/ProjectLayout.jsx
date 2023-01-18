@@ -2,12 +2,15 @@ import React from "react";
 import BaseLayout from "./BaseLayout";
 import { GatsbyImage } from "gatsby-plugin-image";
 
-function ProjectLayout({ image, alt, cleanHtml }) {
+function ProjectLayout({ title, image, alt, cleanHtml }) {
     
     return (
         <>
             <BaseLayout>
                 <div className="content">
+                    <div className="box flex border">
+                        <h1 className="center padding-2 display-text">{title}</h1>
+                    </div>
                     <div className="box border cover bio">
                         <div className="stack">
                             <div className="border box frame center">
