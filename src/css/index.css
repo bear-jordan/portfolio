@@ -57,6 +57,7 @@ select {
 :root {
     --s00: 0.2rem;
     --s0: 0.5rem;
+    --s05: 0.8rem;
     --s1: 2rem;
     --s2: 3rem;
     --s3: 4rem;
@@ -432,6 +433,10 @@ header {
 
 .content {
     margin-top: 50px;
+}
+
+table {
+    font-size: var(--s05);
 }
 
 /* /////////////

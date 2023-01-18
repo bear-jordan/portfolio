@@ -9,6 +9,7 @@ collaborators: alex dreo
 duration: 2 months
 my role: bayesian analysis
 stack: julia, python
+draft: true
 ---
 
 ## about the project

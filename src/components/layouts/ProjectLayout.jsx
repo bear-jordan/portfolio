@@ -9,7 +9,7 @@ function ProjectLayout({ title, image, alt, cleanHtml }) {
             <BaseLayout>
                 <div className="content">
                     <div className="box flex border">
-                        <h1 className="center padding-2 display-text">{title}</h1>
+                        <h1 className="center padding-2 display-text text-align-center">{title}</h1>
                     </div>
                     <div className="box border cover bio">
                         <div className="stack">

@@ -16,7 +16,10 @@ function covid({ data }) {
     
     return (
         <>
-            <ProjectLayout image={getImage(data.markdownRemark.frontmatter.image)} alt="example" cleanHtml={cleanHtml} />
+            <ProjectLayout title={data.markdownRemark.frontmatter.title}
+                image={getImage(data.markdownRemark.frontmatter.image)}
+                alt="example"
+                cleanHtml={cleanHtml} />
         </>
     )
 }

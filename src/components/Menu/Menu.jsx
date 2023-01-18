@@ -5,7 +5,7 @@ function Menu({ showMenu }) {
 
     const data = useStaticQuery(graphql`
         query MenuQuery {
-            allMarkdownRemark {
+            allMarkdownRemark(filter: {frontmatter: {draft: {eq: false}}}) {
                 nodes {
                     frontmatter {
                         title
