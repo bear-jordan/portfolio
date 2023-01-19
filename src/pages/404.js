@@ -1,11 +1,8 @@
-import { graphql } from "gatsby"
 import * as React from "react"
 import BaseLayout from "../components/layouts/BaseLayout"
-import Projects from "../components/Projects/Projects"
 import "../css/index.css"
 
 function NotFound() {
-
     return (
         <>
             <BaseLayout >

@@ -18,8 +18,9 @@ function covid({ data }) {
         <>
             <ProjectLayout title={data.markdownRemark.frontmatter.title}
                 image={getImage(data.markdownRemark.frontmatter.image)}
-                alt="example"
-                cleanHtml={cleanHtml} />
+                alt={data.markdownRemark.frontmatter.alt}
+                cleanHtml={cleanHtml} 
+                download={data.markdownRemark.frontmatter.download} />
         </>
     )
 }
@@ -43,6 +44,7 @@ query CovidQuery {
             slug
             stack
             title
+            download
         }
     }
 }

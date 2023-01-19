@@ -153,7 +153,7 @@ select {
 } 
   
 .stack > * + * {
-    margin-block-start: var(--space, 0rem);
+    margin-block-start: var(--space, --s0);
 }
 
 .stack-row {
@@ -437,7 +437,15 @@ header {
 
 table {
     font-size: var(--s05);
+    max-width: var(--w0);
+    box-sizing: content-box;
+    margin-inline: auto;
 }
+
+th {
+    border-bottom: 1px solid var(--color-dark);
+    border-collapse: collapse;
+  }
 
 /* /////////////
    Exceptions 
