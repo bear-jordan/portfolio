@@ -4,9 +4,8 @@ import { GatsbyImage } from "gatsby-plugin-image";
 import { Link } from "gatsby"
 
 function ProjectLayout({ title, image, alt, cleanHtml, download }) {
-    console.log(download)
-
-    const downloadLink = <div><Link to={"/"+download} className="no-decoration">download report</Link></div>
+    const downloadLink = <div><Link to={"/"+download} className="no-decoration underline-on-hover">download report</Link></div>
+    
     return (
         <>
             <BaseLayout>

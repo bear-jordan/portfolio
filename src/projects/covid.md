@@ -17,6 +17,12 @@ download: covid-traffic.pdf
 
 Recent articles suggest New York City experienced a massive population shift during the COVID-19 pandemic. The present study seeks to understand the impact of this population shift on predictive analytics through the lens of a logistics company, like Uber or FedEx. Specifically, Bayesian parameter estimation is used on the NYC Taxi dataset in order to compare pre-pandemic and post-pandemic traffic levels. This analysis showed that indeed, traffic volume decreased over the observation period consistent with a decrease in population. Next, XGB Regression models are fit to pre- and post-pandemic data to simulate a company, like Uber, who wanted to predict the average trip speed within New York. The analysis shows despite the decreases in traffic, the predictive models trained on either pre- or post-pandemic data are not significantly different. These results suggest that pre-pandemic data is still a valuable resource in modeling traffic dynamics within New York City.
 
+|                    |            |                |                   |
+| -----------------: | :--------- | -------------: | :---------------- |
+| **date created:**  | dec 2022   | **duration:**  | 2 months          |
+| **project type:**  | statistics | **my role:**   | bayesian analysis |
+| **collaborators:** | alex dreo  | **stack:**     | julia             |
+|                    |            |                | python            |
 
 ## challenges
 
