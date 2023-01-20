@@ -5,9 +5,6 @@ import { getImage } from "gatsby-plugin-image"
 import "../../css/index.css"
 
 function volcanicSeismicity({ data }) {
-    console.log(data)
-    console.log(data.markdownRemark)
-    console.log(data.markdownRemark.html)
     const rawHtml = data.markdownRemark.html
 
     let re1 = /(?=<h1>)/g
