@@ -35,16 +35,9 @@ query CovidQuery {
                     gatsbyImageData(placeholder: BLURRED, transformOptions: {fit: FILL})
                 }
             }
-            collaborators
-            date_created
-            duration
-            my_role
-            project_type
-            scheme
-            slug
-            stack
-            title
+            alt
             download
+            title
         }
     }
 }
